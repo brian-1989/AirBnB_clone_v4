@@ -6,11 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function () {
       if ($(this).is(':checked')) {
         dictAmenity[$(this).attr('data-id')] = $(this).attr('data-name');
-        console.log($(this).attr('data-id'));
       } else {
         delete dictAmenity[$(this).attr('data-id')];
       }
-      console.log(dictAmenity);
       $('.amenities h4').text(Object.values(dictAmenity).join(', '));
     }
   );
@@ -32,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.places').append(`<article>
                   <div class="title_box">
                   <h2>` + data[values].name + `</h2>
-                  <div class="price_by_night">` + data[values].price_by_night + `</div>
+                  <div class="price_by_night">` + '$' + data[values].price_by_night + `</div>
                   </div>
                   <div class="information">
                     <div class="max_guest">` + data[values].max_guest + (data[values].max_guest !== 1 ? 'Guests' : 'Guest') + `</div>
